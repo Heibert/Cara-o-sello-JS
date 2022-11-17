@@ -38,38 +38,53 @@ function Sello(){
   Juego(Eleccion)
 }
 function Juego(Eleccion) {
+  imgMoneda.src = "./IMG/Girando.gif"
+  Resultado.textContent = "Girando..."
+  Resultado.style.color = "white"
   moneda = Math.round(Math.random()*1)
   switch (moneda) {
     case 0:
-      imgMoneda.src = "./IMG/Cara.png"
+      setTimeout(() => {imgMoneda.src = "./IMG/Cara.png"},1200)
       if (Eleccion == 0) {
+        setTimeout(() => {
         winned++
         all += Apuesta
         Resultado.textContent = "Ganaste!!"
         Resultado.style.color = "green"
+        info()
+        }, 1200);
       }
       else{
+        setTimeout(() => {
         losed++
         all -= Apuesta
         Resultado.textContent = "Perdiste"
         Resultado.style.color = "red"
+        info()
+        }, 1200);
       }
       break;
     case 1:
-      imgMoneda.src = "./IMG/Sello.png"
+      
+      setTimeout(()=>{imgMoneda.src = "./IMG/Sello.png"},1200)
       if (Eleccion == 1) {
+        setTimeout(() => {
         winned++
         all += Apuesta
         Resultado.textContent = "Ganaste!!"
         Resultado.style.color = "green"
+        info()
+        }, 1200);
       }
       else {
+        setTimeout(() => {
         losed++
         all -= Apuesta
         Resultado.textContent = "Perdiste"
         Resultado.style.color = "red"
+        info()
+        }, 1200);
       }
       break;
   }
-  info()
 }
